@@ -22,23 +22,23 @@ public class ChoixBase {
             }
         }
 
-         System.out.println("Chaîne valide : " + character);
+        System.out.println("Base choisie : " + baseEnTexte(choixBase));
+        System.out.println("Entrez une chaîne à convertir :");
+        String texte = scanner.nextLine();
+
+        System.out.println("Chaîne valide : " + texte);
         System.out.println("chaine de caractere ASCII :");
-        AsciiConvertion.printAsciiCodes(character); 
+        AsciiConvertion.printAsciiCodes(texte); 
         
         System.out.println("entrer le decalage pour le chiffrement César: ");
         int decalage = scanner.nextInt();
-        String chiffre = ChiffrementCesar.chiffrer(character, decalage);
+        String chiffre = ChiffrementCesar.chiffrer(texte, decalage);
         System.out.println("Chaine chiffrée: "+ chiffre);
 
         String dechiffrer = ChiffrementCesar.dechiffrer(chiffre, decalage);
         System.out.println("Chaine déchiffrer: " + dechiffrer);
 
-        System.out.println("Base choisie : " + baseEnTexte(choixBase));
-        System.out.println("Entrez une chaîne à convertir :");
-        String texte = scanner.nextLine();
-
-        System.out.println("Résultat de la conversion :");
+        // System.out.println("Résultat de la conversion :");
 
         for (int i = 0; i < texte.length(); i++) {
             char c = texte.charAt(i);
@@ -47,7 +47,7 @@ public class ChoixBase {
                     System.out.print(Binaire.charToBinary(c) + " ");
                     break;
                 case "o":
-                    System.out.print(Octal.charToOctal(c) + " ");
+                    System.out.print(Octal.convertToBase8(character) + " ");
                     break;
                 case "d":
                     System.out.print(Decimal.charToDecimal(c) + " ");
