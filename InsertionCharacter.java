@@ -16,8 +16,24 @@ public class InsertionCharacter {
 
         System.out.println("Chaîne valide : " + character);
         System.out.println("chaine de caractere ASCII :");
-        AsciiConvertion.printAsciiCodes(character);          
+        AsciiConvertion.printAsciiCodes(character); 
+        
+        System.out.println("entrer le decalage pour le chiffrement César: ");
+        int decalage = scanner.nextInt();
+        String chiffre = ChiffrementCesar.chiffrer(character, decalage);
+        System.out.println("Chaine chiffrée: "+ chiffre);
+
+        String dechiffrer = ChiffrementCesar.dechiffrer(chiffre, decalage);
+        System.out.println("Chaine déchiffrer: " + dechiffrer);
+
+        System.out.println("Chaîne convertie en base 8 :");
+        String base8 = BaseHuit.convertToBase8(character);
+        System.out.println(base8);
+
+        scanner.close();
     }
+    
+
 }
 
 /*char c = 'A';
